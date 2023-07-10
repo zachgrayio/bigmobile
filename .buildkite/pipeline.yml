@@ -1,20 +1,20 @@
 steps:
-  - label: "Configure environment"
+  - label: "⚙️ Configure environment"
     command: .buildkite/common.sh
     key: config
-  - label: "Build iOS (Bazel) App w/ Cache"
+  - label: "iOS: Bazel 🟢 Cache"
     command: .buildkite/ios_cache.sh
     key: build_ios_cache
     depends_on: "config"
-  - label: "Build iOS (Bazel) App - No cache"
+  - label: "iOS: Bazel 🟡 No cache"
     command: .buildkite/ios_nocache.sh
     key: build_ios_nocache
     depends_on: "config"
-  - label: "Build Android (Gradle) App w/ Cache"
+  - label: "Android: Gradle 🟢 Cache"
     command: .buildkite/android_cache.sh
     key: build_android_cache
     depends_on: "config"
-  - label: "Build Android (Gradle) App - No cache"
+  - label: "Android: Gradle 🟡 No cache"
     command: .buildkite/android_nocache.sh
     key: build_android_nocache
     depends_on: "config"
