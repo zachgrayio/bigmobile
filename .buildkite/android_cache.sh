@@ -32,7 +32,7 @@ gradle.settingsEvaluated { settings ->
 
         registerBuildCacheService(BitriseBuildCache.class, BitriseBuildCacheServiceFactory.class)
         remote(BitriseBuildCache.class) {
-            endpoint = System.getenv('BITRISE_CACHE_TOKEN')
+            endpoint = System.getenv('BITRISE_CACHE_ENDPOINT')
             authToken = '54743115ea75d779:' + System.getenv('BITRISE_CACHE_TOKEN')
             enabled = true
             push = true
