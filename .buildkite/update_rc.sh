@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 set -x
 
-cd $pwd/ios
+cd $(pwd)/ios
 
 cat <<EOF>> .bazelrc
 try-import %workspace%/.bitrise.bazelrc

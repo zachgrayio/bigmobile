@@ -4,7 +4,7 @@ set -e
 set -o pipefail
 set -x
 
-SOURCE_DIR=$pwd/ios
+SOURCE_DIR=$(pwd)/ios
 cd $SOURCE_DIR
 
 # configuring bazel
