@@ -40,7 +40,7 @@ gradle.settingsEvaluated { settings ->
             authToken = '54743115ea75d779:' + System.getenv('BITRISE_CACHE_TOKEN')
             enabled = true
             push = true
-            // debug = true
+            debug = true
             blobValidationLevel = "none"
             numChannels = 4
             maxConcurrencyPerChannel = 50
@@ -49,4 +49,4 @@ gradle.settingsEvaluated { settings ->
 }
 EOF
 
-./gradlew clean rootModule:assembleDebug --init-script=./init.gradle
+./gradlew clean assembleDebug --init-script=./init.gradle

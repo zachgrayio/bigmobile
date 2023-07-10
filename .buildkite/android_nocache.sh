@@ -8,4 +8,4 @@ rm -f init.gradle
 
 ./gradlew clean
 ./gradlew --stop
-./gradlew rootModule:assembleDebug --rerun-tasks
+./gradlew assembleDebug --no-build-cache
