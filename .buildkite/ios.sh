@@ -46,7 +46,7 @@ else
 fi
 
 envsubst < .bitrise.bazelrc.tpl > .bitrise.bazelrc
-echo "configured .bitrise.bazelrc; selected cache endpoint: \${BITRISE_CACHE_ENDPOINT}"
+echo "configured .bitrise.bazelrc; selected cache endpoint: ${BITRISE_CACHE_ENDPOINT}"
 
 # telegram build stuff
 mkdir -p $HOME/telegram-configuration
