@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+source .buildkite/common.sh
+
 cd android/mobile_app1
 
 cat << EOF > init.gradle

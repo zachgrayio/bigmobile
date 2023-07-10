@@ -4,6 +4,8 @@ set -e
 set -o pipefail
 set -x
 
+source .buildkite/common.sh
+
 # for telegram iirc
 SOURCE_DIR=$(pwd)/ios
 cd $SOURCE_DIR
