@@ -1,0 +1,8 @@
+[submodule "android"]
+	path = android
+	url = https://github.com/uber-common/android-build-eval
+	shallow = true
+[submodule "ios"]
+	path = ios
+	url = https://github.com/TelegramMessenger/Telegram-iOS
+	shallow = true
