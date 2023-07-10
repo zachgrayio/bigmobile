@@ -4,6 +4,7 @@ set -eo pipefail
 source .buildkite/common.sh
 
 cd android/mobile_app1
+rm -rf .gradle
 
 cat << EOF > init.gradle
 initscript {
