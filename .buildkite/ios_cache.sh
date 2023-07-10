@@ -4,9 +4,7 @@ set -e
 set -o pipefail
 set -x
 
-export INV_ID=$(uuidgen)
-echo "invocation ID $INV_ID"
-
+# for telegram iirc
 SOURCE_DIR=$(pwd)/ios
 cd $SOURCE_DIR
 
@@ -31,19 +29,6 @@ build --bes_header=Authorization="Bearer \$BITRISE_CACHE_TOKEN"
 build --invocation_id=\$INV_ID
 build --remote_header=x-flare-ac-validation-ttl-sec=360
 EOF
-
-if ping -c 1 -W 1 '10.92.230.152' &> /dev/null
-then
-  # LAS
-  export BITRISE_CACHE_ENDPOINT=grpc://10.92.230.152:6666
-elif ping -c 1 -W 1 '10.87.100.50' &> /dev/null
-then
-  # ATL
-  export BITRISE_CACHE_ENDPOINT=grpc://10.87.100.50:6666
-else
-  # ??
-  export BITRISE_CACHE_ENDPOINT=grpcs://pluggable.services.bitrise.io
-fi
 
 envsubst < .bitrise.bazelrc.tpl > .bitrise.bazelrc
 echo "configured .bitrise.bazelrc; selected cache endpoint: ${BITRISE_CACHE_ENDPOINT}"
