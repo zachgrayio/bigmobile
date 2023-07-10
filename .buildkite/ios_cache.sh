@@ -34,6 +34,9 @@ envsubst < .bitrise.bazelrc.tpl > .bitrise.bazelrc
 echo "configured .bitrise.bazelrc; selected cache endpoint: ${BITRISE_CACHE_ENDPOINT}"
 
 # telegram build stuff
+
+bazel clean --expunge
+
 mkdir -p $HOME/telegram-configuration
 mkdir -p $HOME/telegram-provisioning
 cp build-system/appstore-configuration.json $HOME/telegram-configuration/configuration.json
