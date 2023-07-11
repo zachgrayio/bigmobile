@@ -6,3 +6,7 @@
 	path = ios
 	url = https://github.com/TelegramMessenger/Telegram-iOS
 	shallow = true
+[submodule "ios_tuist"]
+	path = ios_tuist
+	url = https://github.com/stripe/stripe-ios.git
+	shallow = true
