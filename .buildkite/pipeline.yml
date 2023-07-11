@@ -3,19 +3,26 @@ steps:
     command: .buildkite/common.sh
     key: config
   - label: "iOS: Bazel 🟢 Cache"
-    command: .buildkite/ios_cache.sh
-    key: build_ios_cache
+    command: .buildkite/ios_bazel_cache.sh
+    key: build_ios_bazel_cache
     depends_on: "config"
   - label: "iOS: Bazel 🟡 No cache"
-    command: .buildkite/ios_nocache.sh
-    key: build_ios_nocache
+    command: .buildkite/ios_bazel_nocache.sh
+    key: build_ios_bazel_nocache
     depends_on: "config"
   - label: "Android: Gradle 🟢 Cache"
-    command: .buildkite/android_cache.sh
-    key: build_android_cache
+    command: .buildkite/android_gradle_cache.sh
+    key: build_android_gradle_cache
     depends_on: "config"
   - label: "Android: Gradle 🟡 No cache"
-    command: .buildkite/android_nocache.sh
-    key: build_android_nocache
+    command: .buildkite/android_gradle_nocache.sh
+    key: build_android_gradle_nocache
     depends_on: "config"
-    
+  - label: "iOS: Tuist 🟡 No cache"
+    command: .buildkite/ios_tuist_nocache.sh
+    key: build_ios_tuist_nocache
+    depends_on: "config"
+  - label: "iOS: Tuist 🟢 Cache"
+    command: .buildkite/ios_tuist_cache.sh
+    key: build_ios_tuist_cache
+    depends_on: "config"
