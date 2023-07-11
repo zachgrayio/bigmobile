@@ -44,7 +44,7 @@ mkdir -p $HOME/telegram-provisioning
 cp build-system/appstore-configuration.json $HOME/telegram-configuration/configuration.json
 cp -R build-system/fake-codesigning $HOME/telegram-provisioning/ 
 
-python3 build-system/Make/ImportCertificates.py --path $HOME/telegram-provisioning/fake-codesigning/certs
+#python3 build-system/Make/ImportCertificates.py --path $HOME/telegram-provisioning/fake-codesigning/certs
 
 
 python3 build-system/Make/Make.py \
