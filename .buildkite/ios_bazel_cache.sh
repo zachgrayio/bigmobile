@@ -41,13 +41,15 @@ echo "configured .bitrise.bazelrc; selected cache endpoint: ${BITRISE_CACHE_ENDP
 
 bazel clean --expunge
 
+rm -rf $HOME/telegram-configuration
+rm -rf $HOME/telegram-provisioning
+
 mkdir -p $HOME/telegram-configuration
 mkdir -p $HOME/telegram-provisioning
 cp build-system/appstore-configuration.json $HOME/telegram-configuration/configuration.json
 cp -R build-system/fake-codesigning $HOME/telegram-provisioning/ 
 
-#python3 build-system/Make/ImportCertificates.py --path $HOME/telegram-provisioning/fake-codesigning/certs
-
+python3 build-system/Make/ImportCertificates.py --path $HOME/telegram-provisioning/fake-codesigning/certs
 
 python3 build-system/Make/Make.py \
     build \
