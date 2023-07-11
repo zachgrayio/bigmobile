@@ -30,8 +30,8 @@ build --bes_backend=grpcs://flare-bes.services.bitrise.io:443
 build --bes_header=Authorization="Bearer \$BITRISE_CACHE_TOKEN"
 #build --bes_header=x-step-id=\$BITRISE_STEP_EXECUTION_ID
 build --invocation_id=\$INV_ID
-#build --bes_header=x-app-id=d7188129eb51d1b0
-build --bes_header=x-org-id=54743115ea75d779
+build --bes_header=x-app-id=d7188129eb51d1b0
+#build --bes_header=x-org-id=54743115ea75d779
 EOF
 
 envsubst < .bitrise.bazelrc.tpl > .bitrise.bazelrc
