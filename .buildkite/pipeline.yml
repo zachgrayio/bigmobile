@@ -13,7 +13,9 @@ steps:
   - label: "Android: Gradle 🟢 Cache"
     command: .buildkite/android_gradle_cache.sh
     key: build_android_gradle_cache
-    depends_on: "config"
+    depends_on:
+      - step: "config"
+      - step: "build_ios_bazel_cache" # not really a dep, but run 'cache-enabled' steps one after another sequentially
   - label: "Android: Gradle 🟡 No cache"
     command: .buildkite/android_gradle_nocache.sh
     key: build_android_gradle_nocache
@@ -25,4 +27,6 @@ steps:
   - label: "iOS: Tuist 🟢 Cache"
     command: .buildkite/ios_tuist_cache.sh
     key: build_ios_tuist_cache
-    depends_on: "config"
+    depends_on:
+      - step: "config"
+      - step: "build_android_gradle_cache" # not really a dep, but run 'cache-enabled' steps one after another sequentially

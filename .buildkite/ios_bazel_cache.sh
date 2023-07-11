@@ -20,6 +20,7 @@ build --remote_cache=\$BITRISE_CACHE_ENDPOINT
 # needs a token set when spawning the run, or set in pool mgr
 build --remote_header=authorization="Bearer \$BITRISE_CACHE_TOKEN"
 build --remote_header=x-org-id=54743115ea75d779
+build --remote_header=x-org-id=d7188129eb51d1b0 # not really this app id but getting failures without it
 build --experimental_remote_cache_compression
 #build --experimental_remote_downloader=\$BITRISE_CACHE_ENDPOINT
 #build --remote_downloader_header=authorization="Bearer \$BITRISE_CACHE_TOKEN"
